@@ -164,11 +164,28 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        exclude: [
+          'angulartics-clicky.js',
+          'angulartics-cnzz.js',
+          // 'angulartics-ga.js',
+          'angulartics-gtm.js',
+          'angulartics-piwik.js',
+          'angulartics-scroll.js',
+          'angulartics-splunk.js',
+          'angulartics-woopra.js',
+          'angulartics-marketo.js',
+          'angulartics-intercom.js',
+          'angulartics-inspectlet.js',
+          'angulartics-newrelic.js',
+        ],
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
+        ignorePath: /(\.\.\/){1,2}bower_components\//,
+        exclude: [
+          'bootstrap-sass/assets/stylesheets/_bootstrap.scss',
+        ],
       }
     },
 
@@ -353,6 +370,16 @@ module.exports = function (grunt) {
           cwd: '.',
           src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: '<%= config.dirPublic %>/bower_components/font-awesome/fonts/',
+          src: '*',
+          dest: '<%= config.dirPublic %>/fonts'
+        }, {
+          expand: true,
+          cwd: '<%= config.dirPublic %>/bower_components/theme/fonts/',
+          src: '*',
+          dest: '<%= config.dirPublic %>/fonts'
         }]
       },
       styles: {

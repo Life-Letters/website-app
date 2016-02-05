@@ -1,0 +1,45 @@
+// Taken from LL-FrontEnd
+.articlePreview {
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto 30px auto;
+  font-size: 10pt;
+
+  @media (max-width: $screen-sm-max ) {
+    font-size: 8pt;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    margin: 5px 0;
+  }
+  h3 {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin: 5px 0;
+  }
+
+  .artPrev-poster {
+    height: 200px;
+    background-size: cover;
+    background-color: $gray-light;
+  }
+  .artPrev-bodyPreview {
+    color: $gray;
+  }
+  .artPrev-date {
+    color: $gray-light;
+    font-size: 9pt;
+    margin-top: 5px;
+  }
+  .artPrev-details {
+    margin-top: -30px;
+    padding: 0 0 0 10px;
+    position: relative;
+
+    > .inner {
+      padding: 2px 7px;
+      background: #fff;
+    }
+  }
+}
