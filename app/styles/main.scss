@@ -1,6 +1,6 @@
 // TODO: put onto S3
-$theme-font-path: "http://localhost:9000/bower_components/web-common/fonts/";
-$icon-font-path: "http://localhost:9000/bower_components/web-common/fonts/";
+$theme-font-path: "/bower_components/web-common/fonts/";
+$icon-font-path: "/bower_components/web-common/fonts/";
 
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
