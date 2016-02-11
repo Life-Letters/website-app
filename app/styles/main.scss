@@ -10,39 +10,63 @@ $icon-font-path: "/bower_components/web-common/fonts/";
 @import "articles";
 
 
-a {
-	outline: none;
+.splashImage {
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  height: 500px;
+  overflow-y: hidden;
+  @media (max-width: $screen-xs-max) {
+    height: 300px;
+  }
 }
 
-// Wraps floating elements within an article, etc. Allows it
-// to be freely sized, even when centered.
-figure {
-	&.align {
-		// On mobile, we don't alter the style
-		@media (min-width: $screen-sm-min) {
-			&-left > div {
-				float: left;
-				margin-right: 20px;
-			}
-			&-right > div {
-				float: right;
-				margin-left: 20px;
-			}
-			&-center {
-				display: block;
-				padding: 30px 0;
+body, 
+html {
+	height: 100%;
+}
 
-				> div,
-				> blockquote {
-					float: none;
-					display: block;
-					margin-left: auto;
-					margin-right: auto;
-				}
-			}
-		}
+.jumbotron {
+	video {
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    // z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #555;
+    background-size: cover; 
 	}
-	@media (max-width: $screen-xs-max) {
-		padding: 20px 0;
+	.videoOverlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.testsSummary {
+	text-align: center;
+
+	.test {
+		display: inline-block;
+		max-width: 200px;
+		.icon {
+			font-size: 100px;
+			display: block;
+		}
+		label {
+			font-size: 110%;
+			margin: 5px 0;
+		}
+		p {
+			color: $gray-light;
+			font-size: 80%;
+			line-height: 1.1em;
+		}
 	}
 }

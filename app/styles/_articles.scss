@@ -19,20 +19,20 @@
     margin: 5px 0;
   }
 
-  .artPrev-poster {
+  .preview_poster {
     height: 200px;
     background-size: cover;
     background-color: $gray-light;
   }
-  .artPrev-bodyPreview {
+  .preview_bodyPreview {
     color: $gray;
   }
-  .artPrev-date {
+  .preview_date {
     color: $gray-light;
     font-size: 9pt;
     margin-top: 5px;
   }
-  .artPrev-details {
+  .preview_details {
     margin-top: -30px;
     padding: 0 0 0 10px;
     position: relative;
@@ -41,5 +41,30 @@
       padding: 2px 7px;
       background: #fff;
     }
+  }
+}
+
+article.article {
+  header {
+    @include clearfix;
+    border-bottom: 1px solid $gray-lighter;
+    padding: 5px 0 15px 0;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 30pt;
+      @media (max-width: $screen-md-max) { font-size: 25pt; }
+      @media (max-width: $screen-sm-max) {}
+      @media (max-width: $screen-xs-max) { font-size: 20pt; }
+    }
+    .article_subtitle {
+      
+    }
+    .article_subtle {
+      
+    }
+  }
+  add-this {
+    min-height: 40px;
   }
 }
