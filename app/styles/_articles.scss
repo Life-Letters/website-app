@@ -8,7 +8,6 @@
   @media (max-width: $screen-sm-max ) {
     font-size: 8pt;
   }
-
   h2 {
     font-size: 1.7em;
     margin: 5px 0;
@@ -18,11 +17,14 @@
     line-height: 1.4em;
     margin: 5px 0;
   }
-
   .preview_poster {
     height: 200px;
     background-size: cover;
     background-color: $gray-light;
+
+    @media (max-width: $screen-sm-max ) {
+      height: 120px;
+    }
   }
   .preview_bodyPreview {
     color: $gray;
@@ -33,7 +35,7 @@
     margin-top: 5px;
   }
   .preview_details {
-    margin-top: -30px;
+    margin-top: -40px;
     padding: 0 0 0 10px;
     position: relative;
 
@@ -42,29 +44,53 @@
       background: #fff;
     }
   }
+  .btn {
+    margin-top: 3px;
+  }
+}
+
+.relatedArticles {
+  padding-top: 300px;
+  @media (max-width: $screen-xs-max) {
+    padding-top: 20px;
+  }
+
+  .articlePreview {
+    .preview_poster {
+      height: 150px;
+    }
+    .preview_details {
+      margin-top: -80px;
+    }
+    .preview_bodyPreview {
+      display: none;
+    }
+  }
 }
 
 article.article {
   header {
     @include clearfix;
-    border-bottom: 1px solid $gray-lighter;
-    padding: 5px 0 15px 0;
     margin-bottom: 30px;
 
-    h1 {
-      font-size: 30pt;
-      @media (max-width: $screen-md-max) { font-size: 25pt; }
+    .article_title {
+      font-size: 40pt;
+      @media (max-width: $screen-md-max) { font-size: 30pt; }
       @media (max-width: $screen-sm-max) {}
       @media (max-width: $screen-xs-max) { font-size: 20pt; }
     }
-    .article_subtitle {
-      
-    }
-    .article_subtle {
-      
+  }
+  .article_body {
+    background: white; 
+    padding: 40px; 
+    position: relative;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 20px;
     }
   }
-  add-this {
-    min-height: 40px;
+  .add-this {
+    min-height: 50px;
+    margin-top: 5px;
   }
 }
