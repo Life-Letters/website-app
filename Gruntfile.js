@@ -81,7 +81,8 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app)
+              connect.static(appConfig.app),
+              connect.static('./bower_components/web-common')
             ];
           }
         }
@@ -379,6 +380,11 @@ module.exports = function (grunt) {
           cwd: '<%= config.dirPublic %>/bower_components/theme/fonts/',
           src: '*',
           dest: '<%= config.dirPublic %>/fonts'
+        },{
+          expand: true,
+          cwd: './bower_components/web-common/views',
+          src: '{,*/}*.html',
+          dest: '<%= yeoman.dist %>/views'
         }]
       },
       styles: {

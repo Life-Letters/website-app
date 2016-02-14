@@ -21,6 +21,7 @@
         website: 'http://dev.lifeletters.com/',
         userService: 'http://localhost:3000/api/v1/',
         productService: 'http://localhost:3000/api/v1/',
+        mailingListService: 'https://lluserprod.herokuapp.com/',
       };
     </script>
   </head>
@@ -38,6 +39,7 @@
 
     <site-nav></site-nav>
     <span ng-include="'views/main.html'"></span>
+    <footer></footer>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -66,6 +68,8 @@
     <script src="bower_components/angular-moment/angular-moment.js"></script>
     <script src="bower_components/web-common/scripts/module.js"></script>
     <script src="bower_components/web-common/scripts/directives/site-nav.js"></script>
+    <script src="bower_components/web-common/scripts/directives/footer.js"></script>
+    <script src="bower_components/web-common/scripts/directives/mailing-list-form.js"></script>
     <script src="bower_components/web-common/scripts/directives/toggleable.js"></script>
     <script src="bower_components/web-common/scripts/directives/store-as-date.js"></script>
     <script src="bower_components/web-common/scripts/directives/edit-cookie.js"></script>

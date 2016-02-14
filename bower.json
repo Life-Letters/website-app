@@ -8,10 +8,9 @@
     "ng-lodash": "~0.2.3",
     "angular-scroll": "~1.0.0",
     "ngSticky": "~1.8.6",
-    "font-awesome": "fontawesome#~4.5.0",
     "angular-bootstrap": "~1.1.1",
     "angular-ladda": "~0.3.1",
-    "web-common": "Life-Letters/web-common#~0.8.0",
+    "web-common": "Life-Letters/web-common#~0.9.0",
     "angular-addthis": "torbensko/angular-addthis#~1.0.0"
   },
   "devDependencies": {
@@ -21,7 +20,6 @@
   "appPath": "app",
   "resolutions": {
     "angular": ">=1.4.0",
-    "ng-lodash": "~0.4.0",
-    "moment": ">=2.8.0 <2.11.0"
+    "ng-lodash": "~0.4.0"
   }
 }
