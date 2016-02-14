@@ -34,74 +34,21 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia ipsam necessitatibus repellat recusandae sint alias dolore omnis, quia neque!</p>
             <br>
             <p>
-              <a href="" class="btn btn-primary">Order now</a>
+              <a href="" class="btn btn-primary">Order now 
+              <span fetch-product="LL201401" ng-show="product">- {{ product.price | currency:'$' }}</span>
+              </a>
               <a href="" class="btn btn-outline">Chat now</a>
             </p>
           </div>
         </div>
 
+        <h3>Another product</h3>
+        <p>Test multiple use of the fetch product directive:</p>
+        <a href="" class="btn btn-info">
+          <span fetch-product="LL201402" ng-show="product">- {{ product.price | currency:'$' }}</span>
+        </a>
+
       </div><!-- .col-sm-6 -->
     </div><!-- .row -->
   </div><!-- .container-fluid -->
 </section><!-- .padding-md -->
-
-
-<!-- 
-<div class="product">
-
-  <div class="product_box layered">
-
-    <div class="layer layer-right"
-        ng-style="{
-          'background-image': util.formatBackgroundUrl(
-            entry.backgroundImage[0].variations._custom.url || 
-            entry.backgroundImage[0].url)
-        }"></div>
-    
-    <header>
-      <h3 class="product_title">
-        
-      </h3>
-    </header>
-
-    <div class="product_content">
-      <div class="product_row" compile=""></div>
-
-      <div class="row product_row">
-        <div class="col-xs-6" ng-show="medications.length">
-          <h4>Medications covered</h4>
-          <ul class="featureList">
-            <li ng-repeat="medication in medications">
-              {{ medication.title }}
-            </li>
-          </ul>
-        </div>
-        <div class="col-xs-6" ng-show="entry.genes.length">
-          <h4>Genes tested</h4>
-          <ul class="featureList">
-            <li ng-repeat="gene in entry.genes">
-              {{ gene.title }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="clearfix">
-        <br>
-        <a class="btn btn-purchase btn-lg _purchaseBtn" ng-href="cart/{{ entry.productCode }}">
-          Order now {{ product.price | noFractionCurrency }}
-        </a>
-        &nbsp;
-        <a href="{{ entry.page[0].uri }}" class="btn btn-lg btn-outline productLink">
-          More information &gt;
-        </a>
-        <a class="btn btn-lg btn-outline productLinkAlt" button-action="openChat">
-          Chat to us &gt;
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
- -->

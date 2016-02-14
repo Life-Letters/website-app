@@ -12,7 +12,7 @@ angular
   ])
   .config(function ($locationProvider, usersProvider, addThisProvider) {
   	$locationProvider.html5Mode(true);
-    usersProvider.setUrl('http://localhost:3000/api/v1/');
+    usersProvider.setUrl( window.urls.userService );
     addThisProvider.setId('ra-5406ccc677c1f23f');
   })
   .run(function($rootScope, $http, $location, $compile, $window) {
