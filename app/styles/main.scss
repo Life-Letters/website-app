@@ -1,6 +1,5 @@
-// TODO: put onto S3
 $theme-font-path: "/bower_components/web-common/fonts/";
-$icon-font-path: "/bower_components/web-common/fonts/";
+
 
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
@@ -212,4 +211,31 @@ $icon-font-path: "/bower_components/web-common/fonts/";
 }
 @media (min-width: $screen-md-min) {
 	@include pageWithLeftMenu(400px, 50px);
+}
+
+
+//
+// PAGE SECTIONS, as used on product and info pages
+// 
+.pageSection {
+	.section_heading {
+		padding: 15px 20px;
+		border-top: 1px solid $gray;
+		border-bottom: 1px solid $gray;
+		background-color: #fafafa;
+		// box-shadow: 0 0 4px rgba(#000, 0.2);
+		
+		h3 {
+			font-size: 24pt;
+			font-weight: 300;	
+			margin: 0;
+			.glyphicon { font-size: 50%; }
+			@media (max-width: $screen-sm-max) {
+				font-size: 16pt;
+			}
+		}
+	}
+	.section_body {
+
+	}
 }
