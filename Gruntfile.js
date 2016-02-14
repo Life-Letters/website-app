@@ -168,7 +168,6 @@ module.exports = function (grunt) {
         exclude: [
           'angulartics-clicky.js',
           'angulartics-cnzz.js',
-          // 'angulartics-ga.js',
           'angulartics-gtm.js',
           'angulartics-piwik.js',
           'angulartics-scroll.js',

@@ -7,12 +7,12 @@ angular
     'angular-ladda',
     'duScroll',
     'sticky',
-    'life.common',
     'sko.addThis',
+    'life.common',
   ])
-  .config(function ($locationProvider, userServiceProvider, addThisProvider) {
+  .config(function ($locationProvider, usersProvider, addThisProvider) {
   	$locationProvider.html5Mode(true);
-    userServiceProvider.setUrl('http://localhost:3000/api/v1/');
+    usersProvider.setUrl('http://localhost:3000/api/v1/');
     addThisProvider.setId('ra-5406ccc677c1f23f');
   })
   .run(function($rootScope, $http, $location, $compile, $window) {

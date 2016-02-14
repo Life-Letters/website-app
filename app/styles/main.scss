@@ -9,13 +9,8 @@ $icon-font-path: "/bower_components/web-common/fonts/";
 
 @import "articles";
 
-body, 
-html {
-	height: 100%;
-}
-
-
-
+// 
+// FIXED HEIGHT SPLASH, as used for articles
 // 
 .leadImage-img {
 	z-index: -1;
@@ -54,6 +49,66 @@ html {
 }
 
 
+//
+// FULL-HEIGHT SPLASH, as used for product pages
+// 
+.fullHeightSplash {
+	position: relative;
+
+	@media (max-width: $screen-xs-max) {
+		.layer {
+			height: 300px;
+			margin-bottom: 20px;
+		}
+	}
+	@media (min-width: $screen-sm-min) {
+		height: 100%;
+		min-height: 500px;
+	}
+
+	.splash_blurb {
+		@include clearfix;
+		padding: 0 20px 60px 20px;
+
+		h1 { font-size: 24pt; }
+		h3 { font-size: 17pt; }
+
+		@media (max-width: $screen-sm-max) {
+			h3 { font-size: 20pt; }
+			h3 { font-size: 16pt; }
+		}
+
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			max-width: 400px;
+		}
+		@media (min-width: $screen-md-min) {
+			max-width: 550px;
+		}
+	}
+
+	.splash_links {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		background: rgba(#fff, 0.8);
+
+		a {
+			font-size: 12pt;
+			padding: 0 5px;
+			@media (max-width: $screen-sm-max) {
+				font-size: 9pt;
+				padding: 0 3px;
+			}
+		}
+	}
+}
+
+
 // Full screen overlay
 .fullscreen {
 	position: absolute;
@@ -69,7 +124,7 @@ html {
 }
 
 
-span.white {
+.white {
 	background: white;
 	line-height: 1.3em;
 }
@@ -114,7 +169,7 @@ span.white {
 
 
 // A page with a fixed left menu
-
+// 
 .pageWithLeftMenu {
 	.page_body {
 	}
