@@ -246,8 +246,17 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 // PRODUCT
 //
 .panel-product {
+	.panel-decoration {
+		font-family: $brand-font-primary;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0.2em 0.4em;
+		font-size: 16pt;
+	}
 	.panel-body {
 		max-width: 600px;
+		padding: 50px 20px;
 	}
 	.panel-options {
 		margin-top: 50px;
