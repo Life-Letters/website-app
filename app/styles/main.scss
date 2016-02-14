@@ -256,49 +256,34 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 	}
 }
 
-// .product {
-// 	margin-bottom: 30px;
 
-// 	.product_box {
-// 		padding: 35px 25px 25px;
+//
+// FIELDS
+//
+.iconField {
+	@include clearfix;
 
-// 		@media (max-width: $screen-sm-max) {
-// 			padding: 20px;
-// 		}
+	@media (max-width: $screen-xs-max) {
+		// Icon to the left of the text
+		display: table-row;
+		margin-bottom: 20px;
 
-// 		@media (max-width: $screen-xs-max) {
-// 			.layer {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-// 	.product_content {
-// 		max-width: 600px;
-// 	}
-// 	.product_row {
-// 		margin-top: 30px;
-// 		@media (max-width: $screen-sm-max) {
-// 			font-size: 11pt;
-// 		}
-// 	}
-// 	.product_title {
-// 		margin: 0 0 20px 0;
-// 		font-size: 18pt;
+		> * {
+	    display: table-cell;
+	  }
 
-// 		.btn {
-// 			margin-left: 15px;
-// 		}
-// 	}
-// 	.btn-buy {
-// 		background-color: white;
-// 	}
-// 	.product_leadImg {
-// 		width: 100%;
-// 		display: block;
-// 		box-shadow: 0 0 3px rgba(#000, 0.2);
+		.icon_icon i {
+			display: inline-block;
+	    vertical-align: top;
+			font-size: 70px;
+			margin: 0 20px 0 0;
+		}
+	}
 
-// 		@media (min-width: $screen-sm-min) {
-// 			display: none;
-// 		}
-// 	}
-// }
+	@media (min-width: $screen-sm-min) {
+		.icon_icon {
+  		display: block; // force icon above text
+  		font-size: 120px;
+  	}
+  }
+}
