@@ -372,14 +372,14 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>'
         }, {
           expand: true,
-          cwd: 'bower_components/font-awesome/fonts/',
-          src: '*',
-          dest: '<%= yeoman.dist %>/fonts'
+          cwd: '/',
+          src: 'bower_components/font-awesome/fonts/*',
+          dest: '<%= yeoman.dist %>'
         }, {
           expand: true,
-          cwd: 'bower_components/theme/fonts/',
-          src: '*',
-          dest: '<%= yeoman.dist %>/fonts'
+          cwd: '.',
+          src: 'bower_components/web-common/fonts/*',
+          dest: '<%= yeoman.dist %>'
         },{
           expand: true,
           cwd: 'bower_components/web-common/views',
@@ -470,4 +470,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('heroku', ['build']);
 };

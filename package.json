@@ -1,6 +1,12 @@
 {
   "name": "life-website",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "gzippo": "^0.2.0",
+    "lodash": "^4.3.0",
+    "morgan": "^1.6.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
