@@ -32,17 +32,18 @@
           </div>
           <div class="panel-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia ipsam necessitatibus repellat recusandae sint alias dolore omnis, quia neque!</p>
-            <br>
-            <p>
-              <a href="" class="btn btn-primary">Order now 
-              <span fetch-product="LL201401" ng-show="product">- {{ product.price | currency:'$' }}</span>
-              </a>
-              <a href="" class="btn btn-outline">Chat now</a>
-            </p>
+            <div class="panel-options">
+              <p>
+                <a href="" class="btn btn-primary">Order now 
+                <span fetch-product="LL201401" ng-show="product">- {{ product.price | currency:'$' }}</span>
+                </a>
+                <a href="" class="btn btn-outline">Chat now</a>
+              </p>
+            </div>
           </div>
         </div>
 
-        <h3>Another product</h3>
+        <br>
         <p>Test multiple use of the fetch product directive:</p>
         <a href="" class="btn btn-info">
           <span fetch-product="LL201402" ng-show="product">- {{ product.price | currency:'$' }}</span>
