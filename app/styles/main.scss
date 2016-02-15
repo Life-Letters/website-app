@@ -1,12 +1,19 @@
 $theme-font-path: "/bower_components/web-common/fonts/";
 
-
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 @import "web-common/scss/include.scss";
 // endbower
 
 @import "articles";
+
+
+article {
+	h1, h2, h3 {
+		margin-top: 20px;
+	}
+}
+
 
 // 
 // FIXED HEIGHT SPLASH, as used for articles
@@ -256,7 +263,8 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 	}
 	.panel-body {
 		max-width: 600px;
-		padding: 50px 20px;
+		padding-top: 50px;
+		padding-bottom: 30px;
 	}
 	.panel-options {
 		margin-top: 50px;
@@ -295,4 +303,28 @@ $theme-font-path: "/bower_components/web-common/fonts/";
   		font-size: 120px;
   	}
   }
+}
+
+
+//
+// Dot
+//
+.dot {
+	$size: 16px;
+	width: $size;
+	height: $size;
+	display: inline-block;
+	border-radius: 50%;
+
+	&-lg {
+		$size: 24px;
+		width: $size;
+		height: $size;
+	}
+	
+	&-primary { background-color: $brand-primary; }
+	&-success { background-color: $brand-success; }
+	&-info { background-color: $brand-info; }
+	&-warning { background-color: $brand-warning; }
+	&-danger { background-color: $brand-danger; }
 }
