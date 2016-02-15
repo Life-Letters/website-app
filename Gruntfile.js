@@ -372,17 +372,17 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>'
         }, {
           expand: true,
-          cwd: '<%= config.dirPublic %>/bower_components/font-awesome/fonts/',
+          cwd: 'bower_components/font-awesome/fonts/',
           src: '*',
-          dest: '<%= config.dirPublic %>/fonts'
+          dest: '<%= yeoman.dist %>/fonts'
         }, {
           expand: true,
-          cwd: '<%= config.dirPublic %>/bower_components/theme/fonts/',
+          cwd: 'bower_components/theme/fonts/',
           src: '*',
-          dest: '<%= config.dirPublic %>/fonts'
+          dest: '<%= yeoman.dist %>/fonts'
         },{
           expand: true,
-          cwd: './bower_components/web-common/views',
+          cwd: 'bower_components/web-common/views',
           src: '{,*/}*.html',
           dest: '<%= yeoman.dist %>/views'
         }]
@@ -460,7 +460,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
+    // 'filerev',
     'usemin',
     'htmlmin'
   ]);

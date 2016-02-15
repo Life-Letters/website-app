@@ -1,10 +1,13 @@
 # Website App
 
-A lean Angular app to support the Life Letters website. Provides the following:
+A lean Angular app to support the Life Letters website. 
 
-- user management (login, logout, etc)
-- site nav
-- injection of social sharing, and comments
+It provides the following functionality:
+
+- injects a navbar that reflects the user's logged in status
+- handles social sharing buttons
+- provides other common elements, such as the footer
+
 
 
 ## Development
@@ -14,15 +17,22 @@ Install
     npm install
     bower install
 
-If editing any of the modules in tandum:
+When working with the other angular projects, it recommended to 
+link them to ensure you're working with the latest copy:
 
-    cd .../angular-users
-    bower link 
+    # In submodule dir
+    bower link
 
-    cd .../website-app
+    # In this dir
     bower link angular-users
 
-Repeat for
+Do this for:
 
+		angular-users
     web-common
 
+
+
+## Heroku
+
+		heroku buildpacks:set https://github.com/nknj/heroku-buildpack-yo-angular.git -a life-website-app-staging
