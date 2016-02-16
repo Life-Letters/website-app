@@ -35,4 +35,6 @@ Do this for:
 
 ## Heroku
 
-		heroku buildpacks:set https://github.com/nknj/heroku-buildpack-yo-angular.git -a life-website-app-staging
+Used during the setup of the project:
+
+		heroku buildpacks:add https://github.com/jakeorr/heroku-buildpack-nodejs-grunt-compass-bower-configurable -a life-website-app-staging
