@@ -15,6 +15,11 @@ article {
 }
 
 
+.img-productBoxOverlay {
+	margin-top: -60px;
+}
+
+
 // 
 // FIXED HEIGHT SPLASH, as used for articles
 // 
@@ -253,6 +258,8 @@ article {
 // PRODUCT
 //
 .panel-product {
+	box-shadow: 0 0 30px rgba(0,0,0,0.1);
+	
 	.panel-decoration {
 		font-family: $brand-font-primary;
 		position: absolute;
