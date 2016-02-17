@@ -1,2 +1,0 @@
-export NPM_COMMAND='npm install'
-export GRUNT_COMMAND='grunt build'

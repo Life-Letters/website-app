@@ -37,4 +37,5 @@ Do this for:
 
 Used during the setup of the project:
 
-		heroku buildpacks:add https://github.com/Life-Letters/heroku-buildpack-nodejs-grunt-compass-bower-configurable -a life-website-app-staging
+		heroku buildpacks:remove --index 1 -a life-website-app-staging
+		heroku buildpacks:add https://github.com/Life-Letters/heroku-buildpack-yo-angular -a life-website-app-staging
