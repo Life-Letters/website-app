@@ -14,10 +14,18 @@ article {
 	}
 }
 
-
+// Move the product box over some of the above content
 .img-productBoxOverlay {
 	margin-top: -60px;
 }
+
+
+.fa-ul {
+	.fa-li.fa-check {
+		color: $brand-success;
+	}
+}
+
 
 
 // 
