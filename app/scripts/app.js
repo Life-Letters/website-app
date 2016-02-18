@@ -37,9 +37,7 @@ angular
           $rootScope.$emit('nav:highlight', $body.attr('nav-highlight'));
 
           // Replace the current theme tag
-          $('body').attr('class', 
-              $('body').attr('class').replace(/theme-[^ ]+/, '') + ($body.attr('page-theme') ? 'theme-'+$body.attr('page-theme') : '')
-            );
+          $('body').attr('class', $body.attr('body-class'));
 
           $window.scrollTo(0, 0);
         });
