@@ -29,10 +29,14 @@ angular
       $http.get( newUrl+(newUrl.match(/\?/)?'&':'?')+'mode=body' )
         .then(function(response) {
           // Compile to ensure any included angular code is initialised
-          var $body = $('<span>'+response.data+'</span>');
+          var $body = $('[async-body]', $('<span>'+response.data+'</span>'));
           // Replace existing content
           $('[async-body]').children().remove();
           $('[async-body]').append( $compile($body)($rootScope) );
+
+          console.log($body.attr('nav-highlight'));
+          $rootScope.$emit('nav:highlight', $body.attr('nav-highlight'));
+
           $window.scrollTo(0, 0);
         });
     });
