@@ -34,8 +34,12 @@ angular
           $('[async-body]').children().remove();
           $('[async-body]').append( $compile($body)($rootScope) );
 
-          console.log($body.attr('nav-highlight'));
           $rootScope.$emit('nav:highlight', $body.attr('nav-highlight'));
+
+          // Replace the current theme tag
+          $('body').attr('class', 
+              $('body').attr('class').replace(/theme-[^ ]+/, '') + ($body.attr('page-theme') ? 'theme-'+$body.attr('page-theme') : '')
+            );
 
           $window.scrollTo(0, 0);
         });
