@@ -32,6 +32,13 @@ article {
 	}
 }
 
+// Toggle some content on and off depending on the page they're used on
+.page-scriptletters {
+	.page-scriptletters-hidden {
+		display: none;
+	}
+}
+
 
 
 //
