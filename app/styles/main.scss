@@ -19,6 +19,19 @@ article {
 	margin-top: -60px;
 }
 
+.decorate {
+	position: relative;
+	overflow: visible;
+}
+.decoration-bottom-right {
+	$size: 300px;
+	position: absolute;
+	height: $size;
+	width: $size;
+	bottom: -$size/2;
+	right: -$size*0.2;
+}
+
 
 .fa-ul {
 	.fa-li.fa-check {
