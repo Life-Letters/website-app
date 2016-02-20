@@ -33,6 +33,60 @@ article {
 }
 
 
+
+//
+// EFFICACY CHARTS
+// 
+.efficacyFigure {
+	display: block;
+  margin-bottom: 30px;
+	text-align: center;
+
+	.fa {
+		padding: 0.1em 0.03em;
+
+		@media (max-width: $screen-sm-max) {
+			font-size: 12pt;
+		}
+
+		&.fine 		{ opacity: 0.5; }
+		&.warning { color: $brand-warning !important; }
+		&.danger 	{ color: $brand-danger !important; }
+	}
+}
+
+// Adapt based on where it's placed and the number of characters per row
+.col-sm-4 .efficacyFigure-5 .fa {
+	font-size: 60pt;
+	@media (max-width: $screen-sm-max) {
+		font-size: 40pt;
+	}
+	@media (max-width: $screen-xs-max) {
+		font-size: 70pt;
+	}
+}
+.col-sm-4 .efficacyFigure-10 .fa {
+	font-size: 28pt;
+
+	@media (max-width: $screen-sm-max) {
+		font-size: 20pt;
+	}
+	@media (max-width: $screen-xs-max) {
+		font-size: 40pt;
+	}
+}
+.col-sm-6 .efficacyFigure-5 .fa {
+	font-size: 80pt;
+	@media (max-width: $screen-sm-max) {
+		font-size: 60pt;
+	}
+	@media (max-width: $screen-xs-max) {
+		font-size: 70pt;
+	}
+}
+
+
+
 // 
 // FIXED HEIGHT SPLASH, as used for articles
 // 
@@ -150,7 +204,8 @@ article {
 
 .white {
 	background: white;
-	line-height: 1.3em;
+	line-height: 1em;
+	outline: 5px solid white;
 }
 
 .jumbotron {
