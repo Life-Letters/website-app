@@ -33,6 +33,22 @@ article {
 }
 
 
+.quote {
+	&-withImage {
+		$size: 90px;
+		padding-left: $size+15px;
+		position: relative;
+
+		img {
+			max-width: $size;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+
 .fa-ul {
 	.fa-li.fa-check {
 		color: $brand-success;
