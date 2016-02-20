@@ -3,7 +3,7 @@
 /**
  * Fetches the price of a given product.
  */
-angular.module('lifeWebsite')
+angular.module('websiteApp')
   .directive('fetchProduct', function ($http, $q, $log) {
     return {
       restrict: 'A',

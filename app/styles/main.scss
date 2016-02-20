@@ -307,7 +307,7 @@ article {
 .pageSection {
 	.section_heading {
 		padding: 15px 20px;
-		border-top: 1px solid $gray;
+		border-top: 1px solid rgba(0,0,0,0.1);
 		border-bottom: 1px solid $gray;
 		background-color: #fafafa;
 		// box-shadow: 0 0 4px rgba(#000, 0.2);
@@ -350,7 +350,7 @@ article {
 	}
 	.panel-options {
 		margin-top: 50px;
-		border-top: 1px solid $gray-lighter;
+		border-top: 1px solid rgba(0,0,0,0.1);
 		padding-top: 20px;
 	}
 }

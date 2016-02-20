@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('lifeWebsite', [
+  .module('websiteApp', [
     'ngLodash',
     'ui.bootstrap',
     'angular-ladda',

@@ -1,5 +1,5 @@
 {
-  "name": "website-app",
+  "name": "website",
   "dependencies": {
     "angular": "^1.3.0",
     "json3": "^3.3.0",

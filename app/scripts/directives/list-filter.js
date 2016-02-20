@@ -6,7 +6,7 @@
  * @description
  * # helpItems
  */
-angular.module('lifeWebsite')
+angular.module('websiteApp')
   .directive('filteredList', function () {
 
     return {
