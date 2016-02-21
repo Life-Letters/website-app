@@ -19,6 +19,11 @@ article {
 	margin-top: -60px;
 }
 
+
+
+//
+// Place images and other content in relation to key element.
+// 
 .decorate {
 	position: relative;
 	overflow: visible;
@@ -33,6 +38,11 @@ article {
 }
 
 
+
+
+//
+// Allow for images in quotes, to cater for testimonials.
+// 
 .quote {
 	&-withImage {
 		$size: 90px;
@@ -89,6 +99,9 @@ article {
 
 
 
+//
+// Filtered elements, e.g. medications
+// 
 .filtered {
 	&-miss,
 	&-hide-default.filtered-default {
@@ -98,6 +111,34 @@ article {
 
 
 
+
+// 
+// Embedded content, e.g. Vimeo/YouTube clips
+// 
+.embed {
+	&-video {
+	  position: relative;
+	  padding-bottom: 54%;
+	  padding-top: 25px;
+	  height: 0;
+	  margin-bottom: 10px;
+
+	  iframe {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	  }
+	}
+}
+
+
+
+
+// 
+// Toggle the way product panels display themselves.
+// 
 .mode-panel-noBgImage {
 	.panel-bgImage {
 		display: none;
@@ -117,7 +158,8 @@ article {
 
 
 //
-// EFFICACY CHARTS
+// EFFICACY CHARTS, i.e. human icons used to show the upper and lower
+// range of a medication's efficacy
 // 
 .efficacyFigure {
 	display: block;
@@ -170,7 +212,8 @@ article {
 
 
 // 
-// FIXED HEIGHT SPLASH, as used for articles
+// FIXED HEIGHT SPLASH, as used for articles. The header is not placed
+// within the lead image. 
 // 
 .leadImage-img {
 	z-index: -1;
@@ -290,6 +333,10 @@ article {
 	outline: 5px solid white;
 }
 
+
+
+// Used by the homepage...
+// 
 .jumbotron {
 	video {
 		position: absolute;
@@ -306,27 +353,6 @@ article {
 	}
 }
 
-.testsSummary {
-	text-align: center;
-
-	.test {
-		display: inline-block;
-		max-width: 200px;
-		.icon {
-			font-size: 100px;
-			display: block;
-		}
-		label {
-			font-size: 110%;
-			margin: 5px 0;
-		}
-		p {
-			color: $gray-light;
-			font-size: 80%;
-			line-height: 1.1em;
-		}
-	}
-}
 
 
 // A page with a fixed left menu
@@ -377,7 +403,8 @@ article {
 
 
 //
-// PAGE SECTIONS, as used on product and info pages
+// PAGE SECTIONS, used to collapse several content blocks. Currently used on 
+// product pages.
 // 
 .pageSection {
 	.section_heading {
