@@ -10,7 +10,7 @@
     "ngSticky": "~1.8.6",
     "angular-bootstrap": "~1.1.1",
     "angular-ladda": "~0.3.1",
-    "web-common": "Life-Letters/web-common#~0.13.2",
+    "web-common": "Life-Letters/web-common#~0.13.3",
     "angular-addthis": "torbensko/angular-addthis#~1.0.0",
     "angular-lazy-img": "^1.2.2",
     "angular-jquery": "torbensko/angular-jquery#^1.1.0"
