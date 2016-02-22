@@ -331,6 +331,10 @@ article {
 	background: linear-gradient(to right, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.7) 20%, rgba(255,255,255,0.0) 60%,rgba(255,255,255,0) 100%);
 }
 
+.blackGradient {
+	background: linear-gradient(to right, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0) 99%);
+}
+
 
 .white {
 	background: white;
@@ -342,7 +346,47 @@ article {
 
 // Used by the homepage...
 // 
-.jumbotron {
+.videoSplash {
+	position: relative;
+
+	video {
+		background-color: #555;
+    background-size: cover;
+	}
+
+	.fa-chevron-down {
+		$size: 50px;
+		position: absolute; 
+		bottom: 20px; 
+		left: 50%; 
+		width: $size*2; 
+		margin-left: -$size; 
+		text-align: center; 
+		display: block; 
+		font-size: $size; 
+		color: rgba(255,255,255,0.4);
+	}
+
+	// @media (min-width: $screen-md-min) {
+	height: 100%;
+	min-height: 600px;
+	color: white;
+	overflow: hidden;
+
+	h1 	{ font-size: 50pt; }
+	p 	{ font-size: 20pt; }
+
+	@media (max-width: $screen-sm-max) {
+		h1 	{ font-size: 34pt; }
+		p 	{ font-size: 16pt; }
+	}
+
+
+	.splash_body {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
 	video {
 		position: absolute;
     top: 50%;
@@ -351,20 +395,41 @@ article {
     min-height: 100%;
     width: auto;
     height: auto;
-    // z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background-color: #555;
-    background-size: cover; 
 	}
+	// }
+
+	// @media (max-width: $screen-sm-max) {
+	// 	background: $gray-lighter;
+	// 	.blackGradient {
+	// 		display: none;
+	// 	}
+	// 	video {
+	// 		position: absolute;
+	//     width: 100%;
+	// 	}
+	// 	.nav-offset {
+	// 		display: none;
+	// 	}
+	// 	h1 {
+	// 		font-size: 30pt;
+	// 	}
+	// 	.btn {
+	// 		display: none;
+	// 	}
+	// 	.splash_body {
+	// 		// margin-top: -20px;
+	// 		margin-bottom: 50px;
+	// 	}
+	// }
 }
 
 
-
+//
 // A page with a fixed left menu
+// TODO: is this still used?
 // 
 .pageWithLeftMenu {
-	.page_body {
-	}
 	.page_menu {
 		padding: 0 20px;
 	}
