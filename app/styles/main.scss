@@ -71,12 +71,12 @@ article {
 // 
 .page-pagesProducts {
 	.nav-offset {
-		height: 0;
+		display: none;
 	}
 }
 .page-homepage {
-	.nav-offset {
-		height: 0;
+	> .nav-offset {
+		display: none;
 	}
 }
 
