@@ -9,6 +9,7 @@ angular
     'sticky',
     'angularLazyImg',
     'sko.addThis',
+    'sko.jquery',
     'life.common',
   ])
   .config(function ($locationProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
@@ -25,7 +26,7 @@ angular
       // container: angular.element(scrollable) // if scrollable container is not $window then provide it here
     });
   })
-  .run(function($rootScope, $http, $location, $compile, $window) {
+  .run(function ($rootScope, $http, $location, $compile, $window, $) {
     // Make some things available to the whole system
     // $rootScope.globals = globals;
     

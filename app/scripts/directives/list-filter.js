@@ -7,7 +7,7 @@
  * # helpItems
  */
 angular.module('websiteApp')
-  .directive('filteredList', function () {
+  .directive('filteredList', function ($) {
 
     return {
       restrict: 'A',

@@ -7,7 +7,7 @@
  * # elementFilter
  */
 angular.module('websiteApp')
-  .directive('elementFilter', function (lodash) {
+  .directive('elementFilter', function ($, lodash) {
     return {
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
@@ -31,10 +31,10 @@ angular.module('websiteApp')
       				if ( visible === 0 ) {
       					$el.siblings('.clearfix').remove();
       				}
-      				if ( visible > 0 && visible % 3 == 0) {
+      				if ( visible > 0 && visible % 3 === 0) {
       					$el.before( $('<div class="clearfix visible-md visible-lg"></div>') );
       				}
-      				if ( visible > 0 && visible % 2 == 0) {
+      				if ( visible > 0 && visible % 2 === 0) {
       					$el.before( $('<div class="clearfix visible-sm"></div>') );
       				}
       				if ( val.length === 0 ) {

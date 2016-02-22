@@ -15,7 +15,9 @@ angular.module('websiteApp')
       link: function postLink(scope, element, attrs) {
         element.on('click', function() {
           if ( attrs.buttonAction === 'openChat' && $window.LC_API ) {
+            /* jshint ignore:start */
             $window.LC_API.open_chat_window();
+            /* jshint ignore:end */
           }
         });
       }
