@@ -14,6 +14,19 @@ article {
 	}
 }
 
+
+[lazy-img] {
+	transition: opacity 1s;
+	opacity: 0;
+
+	&.lazy_loaded {
+		opacity: 1;
+	}
+}
+
+
+
+
 // Move the product box over some of the above content
 .img-productBoxOverlay {
 	margin-top: -60px;

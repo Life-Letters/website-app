@@ -7,13 +7,23 @@ angular
     'angular-ladda',
     'duScroll',
     'sticky',
+    'angularLazyImg',
     'sko.addThis',
     'life.common',
   ])
-  .config(function ($locationProvider, usersProvider, addThisProvider) {
+  .config(function ($locationProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
   	$locationProvider.html5Mode(true);
     usersProvider.setUrl( window.urls.userService );
     addThisProvider.setId('ra-5406ccc677c1f23f');
+
+    lazyImgConfigProvider.setOptions({
+      offset: 100, // how early you want to load image (default = 100)
+      errorClass: 'error', // in case of loading image failure what class should be added (default = null)
+      successClass: 'lazy_loaded', // in case of loading image success what class should be added (default = null)
+      // onError: function(image){}, // function fired on loading error
+      // onSuccess: function(image){}, // function fired on loading success
+      // container: angular.element(scrollable) // if scrollable container is not $window then provide it here
+    });
   })
   .run(function($rootScope, $http, $location, $compile, $window) {
     // Make some things available to the whole system
