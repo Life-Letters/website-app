@@ -12,7 +12,8 @@ angular
     'sko.jquery',
     'life.common',
   ])
-  .config(function ($locationProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
+  .config(function ($locationProvider, $cookiesProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
+    $cookiesProvider.defaults.domain = window.urls.cookies;
   	$locationProvider.html5Mode(true);
     usersProvider.setUrl( window.urls.userService );
     addThisProvider.setId('ra-5406ccc677c1f23f');
