@@ -188,6 +188,7 @@ module.exports = function (grunt) {
         ignorePath: /(\.\.\/){1,2}bower_components\//,
         exclude: [
           'bootstrap-sass/assets/stylesheets/_bootstrap.scss',
+          'font-awesome.scss'
         ],
       }
     },
