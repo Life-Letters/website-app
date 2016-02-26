@@ -27,7 +27,7 @@ article {
 [async-body] {
 	opacity: 1;
 	transition: opacity 0.3s;
-	
+
 	&.async_hide {
 		opacity: 0;
 	}
@@ -291,7 +291,7 @@ article {
 	}
 	@media (min-width: $screen-sm-min) {
 		height: 100%;
-		min-height: 500px;
+		min-height: 700px;
 	}
 
 	.splash_blurb {
