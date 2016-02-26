@@ -13,7 +13,12 @@ angular
     'life.common',
   ])
   .config(function ($locationProvider, $cookiesProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
-    $cookiesProvider.defaults.domain = window.urls.cookies;
+    
+    if ( window.urls.cookies ) {
+      console.log(window.urls.cookies);
+      $cookiesProvider.defaults.domain = window.urls.cookies;
+    }
+
   	$locationProvider.html5Mode(true);
     usersProvider.setUrl( window.urls.userService );
     addThisProvider.setId('ra-5406ccc677c1f23f');
@@ -27,10 +32,12 @@ angular
       // container: angular.element(scrollable) // if scrollable container is not $window then provide it here
     });
   })
-  .run(function ($rootScope, $http, $location, $compile, $window, $) {
+  .run(function ($rootScope, $http, $location, $compile, $window, $, $cookies) {
     // Make some things available to the whole system
     // $rootScope.globals = globals;
     
+    $cookies.put('bar', 'foo');
+
     var initPageLoad = true;
     $rootScope.$on('$locationChangeStart', function(evt, newUrl, oldUrl) {
       if (initPageLoad) { initPageLoad = false; return; }
