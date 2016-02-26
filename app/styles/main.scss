@@ -24,6 +24,15 @@ article {
 }
 
 
+[async-body] {
+	opacity: 1;
+	transition: opacity 0.3s;
+	
+	&.async_hide {
+		opacity: 0;
+	}
+}
+
 
 // Move the product box over some of the above content
 .img-productBoxOverlay {
