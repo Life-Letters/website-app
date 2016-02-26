@@ -15,7 +15,7 @@ angular
   .config(function ($locationProvider, $cookiesProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
     
     if ( window.urls.cookies ) {
-      console.log(window.urls.cookies);
+      // Allow for cross-subdomain cookie sharing
       $cookiesProvider.defaults.domain = window.urls.cookies;
     }
 
@@ -32,17 +32,25 @@ angular
       // container: angular.element(scrollable) // if scrollable container is not $window then provide it here
     });
   })
-  .run(function ($rootScope, $http, $location, $compile, $window, $, $cookies) {
+  .run(function ($rootScope, $http, $location, $compile, $window, $) {
     // Make some things available to the whole system
     // $rootScope.globals = globals;
-    
-    $cookies.put('bar', 'foo');
 
     var initPageLoad = true;
-    $rootScope.$on('$locationChangeStart', function(evt, newUrl, oldUrl) {
+    var locationWatcher = $rootScope.$on('$locationChangeStart', function(evt, newUrl, oldUrl) {
       if (initPageLoad) { initPageLoad = false; return; }
+
       // Ignore param changes
-      if (newUrl.replace(/\?.*/, '') === oldUrl.replace(/\?.*/, '')) { return; }
+      if ( newUrl.replace(/\?.*/, '') === oldUrl.replace(/\?.*/, '')) { return; }
+
+      // Jump the user over to the EHR for known URL patterns:
+      if ( newUrl.match('add-to-cart') ) {
+        // Stop watching to avoid loops
+        locationWatcher();
+        // Switch to the EHR
+        $window.location.href = window.urls.ehr+$location.path().replace(/^\//, '');
+        return;
+      }
 
       // Asyncronously fetch the content
       $http.get( newUrl+(newUrl.match(/\?/)?'&':'?')+'mode=body' )
