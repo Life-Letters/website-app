@@ -54,14 +54,13 @@ angular
 
       // Asyncronously fetch the content
       $('[async-body]').addClass('async_hide');
-      console.log('hey');
       $http.get( newUrl+(newUrl.match(/\?/)?'&':'?')+'mode=body' )
         .then(function(response) {
           // Compile to ensure any included angular code is initialised
           var $body = $('[async-body]', $('<span>'+response.data+'</span>'));
-          // Replace existing content
-          $('[async-body]').replaceWith( $compile($body)($rootScope) );
-          // $('[async-body]').removeClass('async_hide');
+          // Insert before linking to ensure the DOM is available to directives/controllers
+          $('[async-body]').replaceWith($body);
+          $compile($body)($rootScope);
 
           $rootScope.$emit('nav:highlight', $body.attr('nav-highlight'));
 
