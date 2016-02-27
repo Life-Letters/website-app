@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
-    aws: grunt.file.readJSON("aws.json"),
+    aws: grunt.file.readJSON('aws.json'),
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -439,8 +439,8 @@ module.exports = function (grunt) {
         region: 'ap-southeast-2',
       },
       build: {
-        cwd: "dist/",
-        src: "**"
+        cwd: 'dist/',
+        src: '**'
       }
     },
 
