@@ -108,12 +108,11 @@ article {
 // 
 // PAGE SPECIFIC STYLING
 // 
-.page-pagesProducts {
-	.nav-offset {
-		display: none;
-	}
-}
-.page-homepage {
+
+// Remove nav offset
+.page-pagesProducts,
+.page-homepage,
+.page-article {
 	> .nav-offset {
 		display: none;
 	}
@@ -268,7 +267,7 @@ article {
 @media (min-width:$screen-sm-min) {
 	.leadImage-img {
 	  position: absolute;
-	  height: 700px;
+	  height: 600px;
 	  top: 0;
 	  left: 0;
 	  width: 100%;
@@ -409,8 +408,8 @@ article {
 	// @media (min-width: $screen-md-min) {
 	height: 100%;
 	min-height: 600px;
-	color: white;
 	overflow: hidden;
+	// color: white;
 
 	h1 	{ font-size: 50pt; }
 	p 	{ font-size: 20pt; }
@@ -470,21 +469,20 @@ article {
 
 
 //
-// A page with a fixed left menu
-// TODO: is this still used?
+// LIST OTHER ENTRIES NEXT TO MAIN CONTENT, used by the articles page
 // 
-.pageWithLeftMenu {
-	.page_menu {
+.articleWithList {
+	.articleWithList_menu {
 		padding: 0 20px;
 	}
 }
 
-@mixin pageWithLeftMenu($width, $padding) {
-	.pageWithLeftMenu {
-		.page_body {
-			padding-left: $width;
+@mixin articleWithList($width, $padding) {
+	.articleWithList {
+		.articleWithList_body {
+			padding-right: $width;
 		}
-		.page_menu {
+		.articleWithList_menu {
 			width: $width;
 			padding: 0 $padding;
 		}
@@ -492,14 +490,14 @@ article {
 }
 
 @media (min-width: $screen-sm-min) {
-	.pageWithLeftMenu {
+	.articleWithList {
 		position: relative;
-		.page_body {
+		.articleWithList_body {
 			// padding-left: ...;
 		}
-		.page_menu {
+		.articleWithList_menu {
 			position: absolute;
-			left: 0; 
+			right: 0; 
 			top: 0;
 			height: 100%;
 			overflow-y: scroll;
@@ -509,10 +507,10 @@ article {
 	}
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-	@include pageWithLeftMenu(260px, 20px);
+	@include articleWithList(260px, 20px);
 }
 @media (min-width: $screen-md-min) {
-	@include pageWithLeftMenu(400px, 50px);
+	@include articleWithList(400px, 50px);
 }
 
 
