@@ -29,6 +29,8 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    aws: grunt.file.readJSON("aws.json"),
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -224,6 +226,21 @@ module.exports = function (grunt) {
 
     // Renames files for browser caching purposes
     filerev: {
+      options: {
+        // Make sure filerev is updated to use this!
+        process: function(basename, name, extension) {
+          // Ensures they all use the same name
+          if ( !this.name ) {
+            this.name = name;
+            console.log('>');
+            console.log('> To use this instance:');
+            console.log('>');
+            console.log('> heroku config:set WEBSITE_APP_INSTANCE=\''+this.name+'\' -a YOUR_APP');
+            console.log('>');
+          }
+          return basename+'.'+this.name+'.'+extension;
+        },
+      },
       dist: {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
@@ -414,6 +431,19 @@ module.exports = function (grunt) {
       ]
     },
 
+    s3: {
+      options: {
+        accessKeyId: '<%= aws.accessKeyId %>',
+        secretAccessKey: '<%= aws.secretAccessKey %>',
+        bucket: 'lifeletters-website',
+        region: 'ap-southeast-2',
+      },
+      build: {
+        cwd: "dist/",
+        src: "**"
+      }
+    },
+
     // Test settings
     karma: {
       unit: {
@@ -464,9 +494,10 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    // 'filerev',
+    'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    's3'
   ]);
 
   grunt.registerTask('default', [
