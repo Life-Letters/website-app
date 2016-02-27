@@ -7,6 +7,25 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 @import "articles";
 
 
+// PENDING TWEAKS - to be absorbed into common
+
+.text-sm {
+	blockquote {
+		font-size: 11pt;
+		line-height: 1.2em;
+	}
+}
+
+
+
+.mode-productList-hide {
+	.productList {
+		display: none;
+	}
+}
+
+
+
 article {
 	h1, h2, h3 {
 		margin-top: 20px;
