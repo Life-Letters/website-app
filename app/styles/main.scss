@@ -9,6 +9,10 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 
 // PENDING TWEAKS - to be absorbed into common
 
+body {
+	background-color: #fff;
+}
+
 .text-sm {
 	blockquote {
 		font-size: 11pt;
@@ -390,10 +394,59 @@ article {
 // 
 .videoSplash {
 	position: relative;
+	overflow: hidden;
 
-	video {
-		background-color: #fff;
-    background-size: cover;
+	@media (max-width: $screen-xs-max) {
+		min-height: 600px;
+
+		.splash_img {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: 50%;
+		}
+		video { display: none; }
+	}
+
+	@media (min-width: $screen-sm-min) {
+		min-height: 700px;
+
+		.splash_img {
+			display: none;
+		}
+		video {
+			position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    transform: translateX(-50%) translateY(-50%);
+			background-color: #fff;
+	    background-size: cover;
+	    source {
+				background-color: #fff;
+	    }
+		}
+	}
+
+	.splash_body {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding-bottom: 50px;
+
+		h1 	{ font-size: 50pt; }
+		p 	{ font-size: 20pt; }
+
+		@media (max-width: $screen-xs-max) {
+			h1 	{ font-size: 34pt; }
+			p 	{ font-size: 16pt; }
+		}
 	}
 
 	.fa-chevron-down {
@@ -407,68 +460,11 @@ article {
 		display: block; 
 		font-size: $size; 
 		color: rgba(255,255,255,0.4);
+
+		@media (max-width: $screen-xs-max) {
+			font-size: $size*0.6; 
+		}
 	}
-
-	// @media (min-width: $screen-md-min) {
-	height: 100%;
-	min-height: 600px;
-	overflow: hidden;
-	// color: white;
-
-	h1 	{ font-size: 50pt; }
-	p 	{ font-size: 20pt; }
-	
-	// @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-	// 	h1 	{ font-size: 40pt; }
-	// 	p 	{ font-size: 18pt; }
-	// }
-
-	@media (max-width: $screen-xs-max) {
-		h1 	{ font-size: 34pt; }
-		p 	{ font-size: 16pt; }
-	}
-
-
-	.splash_body {
-		margin-top: 50px;
-		margin-bottom: 50px;
-	}
-
-	video {
-		position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-	}
-	// }
-
-	// @media (max-width: $screen-sm-max) {
-	// 	background: $gray-lighter;
-	// 	.blackGradient {
-	// 		display: none;
-	// 	}
-	// 	video {
-	// 		position: absolute;
-	//     width: 100%;
-	// 	}
-	// 	.nav-offset {
-	// 		display: none;
-	// 	}
-	// 	h1 {
-	// 		font-size: 30pt;
-	// 	}
-	// 	.btn {
-	// 		display: none;
-	// 	}
-	// 	.splash_body {
-	// 		// margin-top: -20px;
-	// 		margin-bottom: 50px;
-	// 	}
-	// }
 }
 
 
