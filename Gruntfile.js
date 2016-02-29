@@ -21,7 +21,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
-  var cors = require('cors');
+  var cors = require('cors'),
+      randomString = require('random-string');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -231,11 +232,12 @@ module.exports = function (grunt) {
         process: function(basename, name, extension) {
           // Ensures they all use the same name
           if ( !this.name ) {
-            this.name = name;
+            this.name = randomString({length: 10}).toLowerCase();
             console.log('>');
-            console.log('> To use this instance:');
+            console.log('> To use this instance, run:');
             console.log('>');
-            console.log('> heroku config:set WEBSITE_APP_INSTANCE=\''+this.name+'\' -a YOUR_APP');
+            console.log('heroku config:set WEBSITE_APP_INSTANCE=\''+this.name+'\' -a life-website-staging');
+            console.log('heroku config:set WEBSITE_APP_INSTANCE=\''+this.name+'\' -a life-website');
             console.log('>');
           }
           return basename+'.'+this.name+'.'+extension;

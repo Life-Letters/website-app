@@ -16,10 +16,14 @@ $theme-font-path: "/bower_components/web-common/fonts/";
 	}
 }
 
-
-
 .mode-productList-hide {
 	.productList {
+		display: none;
+	}
+}
+
+.mode-decoration-hide {
+	.decoration {
 		display: none;
 	}
 }
