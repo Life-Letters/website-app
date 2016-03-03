@@ -14,9 +14,9 @@ angular
   ])
   .config(function ($locationProvider, $cookiesProvider, usersProvider, addThisProvider, lazyImgConfigProvider) {
     
-    if ( window.urls.cookies ) {
+    if ( window.cookies ) {
       // Allow for cross-subdomain cookie sharing
-      $cookiesProvider.defaults.domain = window.urls.cookies;
+      $cookiesProvider.defaults.domain = window.cookies;
     }
 
   	$locationProvider.html5Mode(true);
