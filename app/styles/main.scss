@@ -395,27 +395,26 @@ article {
 .videoSplash {
 	position: relative;
 	overflow: hidden;
+	min-height: 600px;
+
+	.splash_img {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: 50% 20%;
+	}
 
 	@media (max-width: $screen-xs-max) {
-		min-height: 600px;
-
-		.splash_img {
-			position: absolute;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-size: cover;
-			background-position: 50%;
+		video {
+			display: none;
 		}
-		video { display: none; }
-	}
+	}	
 
 	@media (min-width: $screen-sm-min) {
 		min-height: 700px;
 
-		.splash_img {
-			display: none;
-		}
 		video {
 			position: absolute;
 	    top: 50%;
@@ -427,9 +426,6 @@ article {
 	    transform: translateX(-50%) translateY(-50%);
 			background-color: #fff;
 	    background-size: cover;
-	    source {
-				background-color: #fff;
-	    }
 		}
 	}
 

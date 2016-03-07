@@ -35,6 +35,15 @@ angular
   .run(function ($rootScope, $http, $location, $compile, $window, $) {
     // Make some things available to the whole system
     // $rootScope.globals = globals;
+    
+    function iedetect(v) {
+      var r = RegExp('msie' + (!isNaN(v) ? ('\\s' + v) : ''), 'i');
+      return r.test(navigator.userAgent);
+    }
+
+    if (screen.width < 800 || iedetect(8) || iedetect(7) || 'ontouchstart' in window) {
+      $('video').remove();
+    }
 
     var initPageLoad = true;
     var locationWatcher = $rootScope.$on('$locationChangeStart', function(evt, newUrl, oldUrl) {
