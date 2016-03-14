@@ -47,19 +47,22 @@ angular
 
     var initPageLoad = true;
     var locationWatcher = $rootScope.$on('$locationChangeStart', function(evt, newUrl, oldUrl) {
-      if (initPageLoad) { initPageLoad = false; return; }
-
-      // Ignore param changes
-      if ( newUrl.replace(/\?.*/, '') === oldUrl.replace(/\?.*/, '')) { return; }
-
+      
       // Jump the user over to the EHR for known URL patterns:
-      if ( newUrl.match('add-to-cart') ) {
+      // TODO: solve this in a nicer way
+      if ( newUrl.match('add-to-cart') || newUrl.match('login') || newUrl.match('users') || newUrl.match('referral') ) {
         // Stop watching to avoid loops
         locationWatcher();
         // Switch to the EHR
         $window.location.href = window.urls.ehr+$location.path().replace(/^\//, '');
         return;
       }
+
+      // Ignore the initial page load
+      if (initPageLoad) { initPageLoad = false; return; }
+
+      // Ignore param changes
+      if ( newUrl.replace(/\?.*/, '') === oldUrl.replace(/\?.*/, '')) { return; }
 
       // Asyncronously fetch the content
       $('[async-body]').addClass('async_hide');
