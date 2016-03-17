@@ -8,6 +8,8 @@ angular
     'duScroll',
     'sticky',
     'angularLazyImg',
+    'angulartics', 
+    'angulartics.google.analytics',
     'sko.addThis',
     'sko.jquery',
     'life.common',
