@@ -52,7 +52,7 @@ angular
       
       // Jump the user over to the EHR for known URL patterns:
       // TODO: solve this in a nicer way
-      if ( newUrl.match('add-to-cart') || newUrl.match('login') || newUrl.match('users') || newUrl.match('referral') ) {
+      if ( newUrl.match('add-to-cart') || newUrl.match('login') || newUrl.match('users') || newUrl.match('referral') || newUrl.match('register') ) {
         // Stop watching to avoid loops
         locationWatcher();
         // Switch to the EHR
