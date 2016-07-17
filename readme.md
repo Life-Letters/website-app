@@ -1,3 +1,9 @@
+## Please note, this repository is deprecated.
+
+The logic within this project has since been incorporated into the [website](https://github.com/Life-Letters/website) repository.
+
+--
+
 # Website App
 
 A lean Angular app to support the Life Letters website. 
